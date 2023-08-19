@@ -7,8 +7,8 @@
 		"main":		 "#005c9d",
 		"accent":	 "#b76300",
 		"lightfg":	 "#8d847b",
-		"bgpath":	 "res://assets/backgrounds/bg.png",
-		"star":		 "res://assets/stars/adastral.svg"
+		"bgpath":	 "res://assets/main/backgrounds/bg.png",
+		"star":		 "res://assets/main/stars/adastral.svg"
 	},
 	"open_fortress": {
 		"id":		 "open_fortress",
@@ -17,10 +17,10 @@
 		"main":		 "#59416a",	
 		"accent":	 "#d49c6b",
 		"lightfg":	 "#8d847b",
-		"bgpath":	 "res://assets/backgrounds/game/of-bg.jpg",
-		"star":		 "res://assets/stars/game/adastral-of.png",
-		"icon":		 "res://assets/icons/game/of-logo-new.svg",
-		"wordmark":	 "res://assets/wordmarks/game/of_wordmark_trimmed.png"
+		"bgpath":	 "res://assets/game/backgrounds/of-bg.jpg",
+		"star":		 "res://assets/game/stars/adastral-of.png",
+		"icon":		 "res://assets/game/icons/of-logo-new.svg",
+		"wordmark":	 "res://assets/game/wordmarks/of_wordmark_trimmed.png"
 	},
 	"tf2classic": {
 		"id":		 "tf2classic",
@@ -30,10 +30,10 @@
 		"secondary": "#4b301b",
 		"accent":	 "#c25a2b",
 		"lightfg":	 "#8d847b",
-		"bgpath":	 "res://assets/backgrounds/game/tf2c-bg.jpg",
-		"star":		 "res://assets/stars/game/adastral-tf2c.png",
-		"icon":		 "res://assets/icons/game/tf2c-logo-mono.svg",
-		"wordmark":	 "res://assets/wordmarks/game/tf2c_wordmark_trimmed.png"
+		"bgpath":	 "res://assets/game/backgrounds/tf2c-bg.jpg",
+		"star":		 "res://assets/game/stars/adastral-tf2c.png",
+		"icon":		 "res://assets/game/icons/tf2c-logo-mono.svg",
+		"wordmark":	 "res://assets/game/wordmarks/tf2c_wordmark_trimmed.png"
 	},
 	"prefortress2": {
 		"id":		 "prefortress2",
@@ -43,9 +43,9 @@
 		"secondary": "#583a31",
 		"accent":	 "#b73739",
 		"lightfg":	 "#8d847b",
-		"bgpath":	 "res://assets/backgrounds/game/pf2-bg.png",
-		"star":		 "res://assets/stars/game/adastral-pf2.png",
-		"icon":		 "res://assets/icons/game/pf2-logo-mono.svg",
-		"wordmark":	 "res://assets/wordmarks/game/pf2_wordmark_trimmed.png"
+		"bgpath":	 "res://assets/game/backgrounds/pf2-bg.png",
+		"star":		 "res://assets/game/stars/adastral-pf2.png",
+		"icon":		 "res://assets/game/icons/pf2-logo-mono.svg",
+		"wordmark":	 "res://assets/game/wordmarks/pf2_wordmark_trimmed.png"
 	}
 }
