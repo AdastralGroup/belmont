@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsvft2mlbfb7k"
-path="res://.godot/imported/adastral-of.png-6729c198d71802fb515256313a3fdf42.ctex"
+path="res://.godot/imported/adastral-of.png-4a03d8aaf551c120f04722be1861da6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/adastral-of.png"
-dest_files=["res://.godot/imported/adastral-of.png-6729c198d71802fb515256313a3fdf42.ctex"]
+source_file="res://assets/stars/game/adastral-of.png"
+dest_files=["res://.godot/imported/adastral-of.png-4a03d8aaf551c120f04722be1861da6d.ctex"]
 
 [params]
 

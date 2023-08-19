@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nb7ncioi46g3"
-path="res://.godot/imported/adastral-tf2c.png-7140692f435dbb29c5b1a2e845bd105a.ctex"
+uid="uid://ck55k7hw0jfn0"
+path="res://.godot/imported/of_wordmark_trimmed.png-f8e7c80911b5ea63c981acd3fb9632be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/adastral-tf2c.png"
-dest_files=["res://.godot/imported/adastral-tf2c.png-7140692f435dbb29c5b1a2e845bd105a.ctex"]
+source_file="res://assets/wordmarks/game/of_wordmark_trimmed.png"
+dest_files=["res://.godot/imported/of_wordmark_trimmed.png-f8e7c80911b5ea63c981acd3fb9632be.ctex"]
 
 [params]
 

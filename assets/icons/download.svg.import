@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k26yaq7v8rdk"
-path="res://.godot/imported/of_wordmark_big.png-412719f399b1ae8bbf01e73199cd589b.ctex"
+uid="uid://ceom1bckqrqap"
+path="res://.godot/imported/download.svg-d5935f49be2e083bbd5db47c252f8b40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/of_wordmark_big.png"
-dest_files=["res://.godot/imported/of_wordmark_big.png-412719f399b1ae8bbf01e73199cd589b.ctex"]
+source_file="res://assets/icons/download.svg"
+dest_files=["res://.godot/imported/download.svg-d5935f49be2e083bbd5db47c252f8b40.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

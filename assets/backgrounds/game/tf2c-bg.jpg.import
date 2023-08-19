@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jkh4j00tdwb4"
-path="res://.godot/imported/pf2_wordmark_trimmed.png-119148276ffcdd8a30ffb0df523537f1.ctex"
+uid="uid://u3sxv4ed2sfv"
+path="res://.godot/imported/tf2c-bg.jpg-ff1e031a91f6d26aa2f2d912b3653b98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pf2_wordmark_trimmed.png"
-dest_files=["res://.godot/imported/pf2_wordmark_trimmed.png-119148276ffcdd8a30ffb0df523537f1.ctex"]
+source_file="res://assets/backgrounds/game/tf2c-bg.jpg"
+dest_files=["res://.godot/imported/tf2c-bg.jpg-ff1e031a91f6d26aa2f2d912b3653b98.ctex"]
 
 [params]
 

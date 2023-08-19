@@ -2,22 +2,22 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxs0m0sfh7nwk"
-path="res://.godot/imported/of-logo-new.svg-ad90c63d5f33ff2b66085f6ed5de4484.ctex"
+uid="uid://b1e3ls0tji5ip"
+path="res://.godot/imported/pf2-logo-mono.svg-a4b6a8ad883e45cbfee6f36191cff25c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/of-logo-new.svg"
-dest_files=["res://.godot/imported/of-logo-new.svg-ad90c63d5f33ff2b66085f6ed5de4484.ctex"]
+source_file="res://assets/icons/game/pf2-logo-mono.svg"
+dest_files=["res://.godot/imported/pf2-logo-mono.svg-a4b6a8ad883e45cbfee6f36191cff25c.ctex"]
 
 [params]
 
 compress/mode=1
 compress/high_quality=false
-compress/lossy_quality=0.0
+compress/lossy_quality=0.01
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
