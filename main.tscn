@@ -2,7 +2,6 @@
 
 [ext_resource type="Theme" uid="uid://bvvhkciajx7vs" path="res://themes/base.tres" id="1_iqqha"]
 [ext_resource type="Shader" path="res://tween.gdshader" id="4_5diq2"]
-[ext_resource type="Texture2D" uid="uid://diee7uq3voana" path="res://assets/adastral-256.svg" id="4_5x6qi"]
 [ext_resource type="Texture2D" uid="uid://ccbrk3xcvf5gv" path="res://assets/stars/adastral.svg" id="5_dbn8e"]
 [ext_resource type="Script" path="res://main.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://bjvrgo2shmf48" path="res://assets/icons/about.png" id="6_0rhqe"]
@@ -13,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b21fcl1p2qpc8" path="res://assets/icons/settings.png" id="9_oabdq"]
 [ext_resource type="Texture2D" uid="uid://u3sxv4ed2sfv" path="res://assets/backgrounds/game/tf2c-bg.jpg" id="12_x24cb"]
 [ext_resource type="Texture2D" uid="uid://01foylgwqogg" path="res://assets/backgrounds/game/of-bg.jpg" id="13_1kq8w"]
+[ext_resource type="Texture2D" uid="uid://diee7uq3voana" path="res://assets/backgrounds/adastral-256.svg" id="14_hwo7l"]
 [ext_resource type="FontFile" uid="uid://pskwpwxk0pd4" path="res://fonts/HankenGrotesk-SemiBold.ttf" id="15_m18sp"]
 [ext_resource type="Script" path="res://starspin.gd" id="16"]
 [ext_resource type="Texture2D" uid="uid://ck55k7hw0jfn0" path="res://assets/wordmarks/game/of_wordmark_trimmed.png" id="16_krwbs"]
@@ -178,7 +178,7 @@ offset_top = 70.0
 offset_right = 597.0
 offset_bottom = 450.0
 pivot_offset = Vector2(190, 190)
-texture = ExtResource("4_5x6qi")
+texture = ExtResource("14_hwo7l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16")
