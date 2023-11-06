@@ -1,21 +1,21 @@
 [gd_scene load_steps=23 format=3 uid="uid://d2fac2xibuh1b"]
 
-[ext_resource type="Theme" uid="uid://bqpi1momfja7u" path="res://themes/base.tres" id="1_iqqha"]
+[ext_resource type="Theme" uid="uid://bvvhkciajx7vs" path="res://themes/base.tres" id="1_iqqha"]
 [ext_resource type="Shader" path="res://tween.gdshader" id="4_5diq2"]
-[ext_resource type="Texture2D" uid="uid://diee7uq3voana" path="res://assets/adastral-256.svg" id="4_5x6qi"]
-[ext_resource type="Texture2D" uid="uid://ccbrk3xcvf5gv" path="res://assets/adastral.svg" id="4_epacs"]
+[ext_resource type="Texture2D" uid="uid://ccbrk3xcvf5gv" path="res://assets/main/stars/adastral.svg" id="5_dbn8e"]
 [ext_resource type="Script" path="res://main.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://bjvrgo2shmf48" path="res://assets/main/icons/about.png" id="6_2h67s"]
 [ext_resource type="FontFile" uid="uid://cknx8yer7op7k" path="res://fonts/HankenGrotesk.ttf" id="6_e4w67"]
+[ext_resource type="Texture2D" uid="uid://ceom1bckqrqap" path="res://assets/main/icons/download.svg" id="7_4qrlt"]
+[ext_resource type="Texture2D" uid="uid://c5na4nwipcjcg" path="res://assets/main/icons/home.svg" id="8_jay6h"]
+[ext_resource type="Texture2D" uid="uid://b21fcl1p2qpc8" path="res://assets/main/icons/settings.png" id="9_0uc5o"]
 [ext_resource type="Shader" path="res://rounded.gdshader" id="9_ife38"]
-[ext_resource type="Texture2D" uid="uid://b21fcl1p2qpc8" path="res://assets/settings.png" id="10"]
-[ext_resource type="Texture2D" uid="uid://u3sxv4ed2sfv" path="res://assets/tf2c-bg.jpg" id="11_anxy3"]
-[ext_resource type="Texture2D" uid="uid://01foylgwqogg" path="res://assets/of-bg.jpg" id="11_qdakl"]
-[ext_resource type="Texture2D" uid="uid://bjvrgo2shmf48" path="res://assets/about.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://u3sxv4ed2sfv" path="res://assets/game/backgrounds/tf2c-bg.jpg" id="12_x24cb"]
+[ext_resource type="Texture2D" uid="uid://01foylgwqogg" path="res://assets/game/backgrounds/of-bg.jpg" id="13_1kq8w"]
+[ext_resource type="Texture2D" uid="uid://diee7uq3voana" path="res://assets/main/backgrounds/adastral-256.svg" id="14_hwo7l"]
 [ext_resource type="FontFile" uid="uid://pskwpwxk0pd4" path="res://fonts/HankenGrotesk-SemiBold.ttf" id="15_m18sp"]
-[ext_resource type="Texture2D" uid="uid://ceom1bckqrqap" path="res://assets/download.svg" id="15_n1hrw"]
 [ext_resource type="Script" path="res://starspin.gd" id="16"]
-[ext_resource type="Texture2D" uid="uid://ck55k7hw0jfn0" path="res://assets/of_wordmark_trimmed.png" id="16_bg3gb"]
-[ext_resource type="Texture2D" uid="uid://c5na4nwipcjcg" path="res://assets/home.svg" id="16_t3pry"]
+[ext_resource type="Texture2D" uid="uid://ck55k7hw0jfn0" path="res://assets/game/wordmarks/of_wordmark_trimmed.png" id="16_krwbs"]
 [ext_resource type="Texture2D" uid="uid://dpkhwf8y3a5at" path="res://assets/mockup.png" id="20_17qi8"]
 
 [sub_resource type="FontVariation" id="FontVariation_qo1cp"]
@@ -40,7 +40,7 @@ shadow_size = 6
 shader = ExtResource("9_ife38")
 shader_parameter/radius = 18.0
 shader_parameter/weight = 1.0
-shader_parameter/target_texture = ExtResource("11_anxy3")
+shader_parameter/target_texture = ExtResource("12_x24cb")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ikao0"]
 shader = ExtResource("4_5diq2")
@@ -84,7 +84,7 @@ offset_left = 12.0
 offset_top = 10.0
 offset_right = 50.0
 offset_bottom = 47.0
-texture = ExtResource("4_epacs")
+texture = ExtResource("5_dbn8e")
 expand_mode = 1
 
 [node name="AboutButton" type="TextureButton" parent="Main/TopPanel"]
@@ -94,7 +94,7 @@ offset_top = 13.0
 offset_right = 711.0
 offset_bottom = 45.0
 theme_type_variation = &"TopButton"
-texture_normal = ExtResource("12")
+texture_normal = ExtResource("6_2h67s")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -105,7 +105,7 @@ offset_top = 13.0
 offset_right = 667.0
 offset_bottom = 45.0
 theme_type_variation = &"TopButton"
-texture_normal = ExtResource("15_n1hrw")
+texture_normal = ExtResource("7_4qrlt")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -116,7 +116,7 @@ offset_top = 14.0
 offset_right = 623.0
 offset_bottom = 46.0
 theme_type_variation = &"TopButton"
-texture_normal = ExtResource("16_t3pry")
+texture_normal = ExtResource("8_jay6h")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -128,7 +128,7 @@ offset_right = 756.0
 offset_bottom = 46.0
 theme_type_variation = &"TopButton"
 action_mode = 0
-texture_normal = ExtResource("10")
+texture_normal = ExtResource("9_0uc5o")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -167,7 +167,7 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = 709.0
 offset_bottom = 214.0
-texture = ExtResource("11_qdakl")
+texture = ExtResource("13_1kq8w")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="Main"]
@@ -178,7 +178,7 @@ offset_top = 70.0
 offset_right = 597.0
 offset_bottom = 450.0
 pivot_offset = Vector2(190, 190)
-texture = ExtResource("4_5x6qi")
+texture = ExtResource("14_hwo7l")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("16")
@@ -298,7 +298,7 @@ offset_top = 155.0
 offset_right = 485.0
 offset_bottom = 255.0
 theme_type_variation = &"WMPanel"
-texture = ExtResource("16_bg3gb")
+texture = ExtResource("16_krwbs")
 expand_mode = 1
 stretch_mode = 4
 
