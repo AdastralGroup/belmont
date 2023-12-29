@@ -33,8 +33,8 @@ jobs:
           repo: adastralgroup/winter 
       - name: Setup
         run: |
-          sudo apt-get update
-          sudo apt-get install -y libnotify4 libnotify-dev
+          apt-get update
+          apt-get install -y libnotify4 libnotify-dev
           cp linux/* bin/
           cp windows/* bin/
           mkdir -v -p ~/.local/share/godot/templates
