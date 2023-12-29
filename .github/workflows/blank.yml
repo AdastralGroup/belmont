@@ -30,11 +30,13 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: linux.yml
           workflow_conclusion: success
-          repo: adastralgroup/winter  
+          repo: adastralgroup/winter 
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libnotify-dev libnotify4
+          version: 1.0
       - name: Setup
         run: |
-          apt-get update
-          apt-get install libnotify4
           cp linux/* bin/
           cp windows/* bin/
           mkdir -v -p ~/.local/share/godot/templates
@@ -67,10 +69,12 @@ jobs:
           workflow: linux.yml
           workflow_conclusion: success
           repo: adastralgroup/winter
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: libnotify-dev libnotify4
+          version: 1.0    
       - name: Setup
         run: |
-          apt-get update
-          apt-get install libnotify4 
           cp linux/* bin/
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
