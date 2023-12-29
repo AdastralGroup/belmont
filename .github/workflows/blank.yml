@@ -31,7 +31,7 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
-          godot -v --export-debug "Windows Desktop" build/windows/adastral.exe
+          godot -v --export-debug --headless "Windows Desktop" build/windows/adastral.exe
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
@@ -64,7 +64,7 @@ jobs:
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
-          godot -v --export-debug "Linux/X11" build/linux/adastral.x86_64
+          godot -v --export-debug --headless "Linux/X11" build/linux/adastral.x86_64
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
