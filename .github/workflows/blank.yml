@@ -16,15 +16,15 @@ jobs:
         with:
           lfs: true
       - name: Download Windows artifact
-        id: download-artifact
+        id: download-win-artifact
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
           workflow: windows.yml
           workflow_conclusion: success
           repo: adastralgroup/winter
-       - name: Download artifact
-        id: download-artifact
+      - name: Download Linux artifact
+        id: download-lin-artifact
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
