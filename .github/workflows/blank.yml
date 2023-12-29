@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           lfs: true
-      - name: Download artifact
+      - name: Download Windows artifact
         id: download-artifact
         uses: dawidd6/action-download-artifact@v2
         with:
@@ -23,8 +23,18 @@ jobs:
           workflow: windows.yml
           workflow_conclusion: success
           repo: adastralgroup/winter
+       - name: Download artifact
+        id: download-artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          workflow: linux.yml
+          workflow_conclusion: success
+          repo: adastralgroup/winter  
       - name: Setup
         run: |
+          apt-get install libnotify-dev
+          cp linux/* bin/
           cp windows/* bin/
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
@@ -58,6 +68,7 @@ jobs:
           repo: adastralgroup/winter
       - name: Setup
         run: |
+          apt-get install libnotify-dev 
           cp linux/* bin/
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
