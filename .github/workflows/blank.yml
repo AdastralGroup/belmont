@@ -8,13 +8,15 @@ jobs:
   export-windows:
     name: Windows Export
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.2.1
     steps:
       - name: Checkout main repo
         uses: actions/checkout@v2
         with:
           lfs: true
+      - uses: chickensoft-games/setup-godot@v1
+        name: Setup Godot
+        with:
+          version: 4.2.1
       - name: Download Windows artifact
         id: download-win-artifact
         uses: dawidd6/action-download-artifact@v2
@@ -37,8 +39,6 @@ jobs:
           apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
           cp linux/* bin/
           cp windows/* bin/
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Windows Build
         run: |
           mkdir -v -p build/windows
@@ -52,9 +52,11 @@ jobs:
   export-linux:
     name: Linux Export
     runs-on: ubuntu-latest
-    container:
-      image: barichello/godot-ci:4.2.1
     steps:
+      - uses: chickensoft-games/setup-godot@v1
+        name: Setup Godot
+        with:
+          version: 4.2.1
       - name: Checkout main repo
         uses: actions/checkout@v2
         with:
@@ -72,8 +74,6 @@ jobs:
           apt-get update
           apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
           cp linux/* bin/
-          mkdir -v -p ~/.local/share/godot/templates
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Linux Build
         run: |
           mkdir -v -p build/linux
