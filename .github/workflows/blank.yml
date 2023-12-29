@@ -35,8 +35,8 @@ jobs:
           repo: adastralgroup/winter 
       - name: Setup
         run: |
-          apt-get update
-          apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
+          sudo apt-get update
+          sudo apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
           cp linux/* bin/
           cp windows/* bin/
       - name: Windows Build
@@ -71,8 +71,8 @@ jobs:
           repo: adastralgroup/winter
       - name: Setup
         run: |
-          apt-get update
-          apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
+          sudo apt-get update
+          sudo apt-get install -y libnotify4 libnotify-dev libcurl4-openssl-dev 
           cp linux/* bin/
       - name: Linux Build
         run: |
