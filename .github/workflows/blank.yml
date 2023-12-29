@@ -33,6 +33,7 @@ jobs:
           repo: adastralgroup/winter  
       - name: Setup
         run: |
+          apt-get update
           apt-get install libnotify4
           cp linux/* bin/
           cp windows/* bin/
@@ -68,6 +69,7 @@ jobs:
           repo: adastralgroup/winter
       - name: Setup
         run: |
+          apt-get update
           apt-get install libnotify4 
           cp linux/* bin/
           mkdir -v -p ~/.local/share/godot/templates
