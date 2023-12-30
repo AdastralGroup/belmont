@@ -63,7 +63,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/windows.zip
-          tag_name: ${{ env.TIME }}
+          tag_name: ${{ env.time }}
           draft: false
           prerelease: true
           
@@ -111,6 +111,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/linux.zip
-          tag_name: ${{ env.TIME }}
+          tag_name: ${{ env.time }}
           draft: false
           prerelease: true
