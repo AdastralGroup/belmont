@@ -63,6 +63,7 @@ jobs:
           zip -r ../windows.zip .
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         with:
           files: build/windows.zip
           tag_name: ${{ env.target_tag }}
@@ -113,6 +114,7 @@ jobs:
           zip -r ../linux.zip .
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v1
+        if: ${{ github.event_name == 'push' || github.event_name == 'workflow_dispatch' }}
         with:
           files: build/linux.zip
           tag_name: ${{ env.target_tag }}
