@@ -14,7 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set current date as env variable
-        run: echo "time=$(date +'%Y%m%d%H')" >> $GITHUB_ENV
+        run: |
+          _ts=$(date -d '${{ github.event.head_commit.updated_at}}' +'%Y%m%d%H%M%S')
+          echo "target_tag=${_ts}" >> $GITHUB_ENV
       - name: Checkout main repo
         uses: actions/checkout@v2
         with:
@@ -72,7 +74,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set current date as env variable
-        run: echo "time=$(date +'%Y%m%d%H')" >> $GITHUB_ENV
+        run: |
+          _ts=$(date -d '${{ github.event.head_commit.updated_at}}' +'%Y%m%d%H%M%S')
+          echo "target_tag=${_ts}" >> $GITHUB_ENV
       - uses: chickensoft-games/setup-godot@v1
         name: Setup Godot
         with:
