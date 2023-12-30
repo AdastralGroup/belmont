@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Set current date as env variable
         run: |
-          _ts=$(date -d '${{ github.event.head_commit.updated_at}}' +'%Y%m%d%H%M%S')
+          _ts=$(date -d '${{ github.event.head_commit.timestamp}}' +'%Y%m%d%H%M%S')
           echo "target_tag=${_ts}" >> $GITHUB_ENV
       - name: Checkout main repo
         uses: actions/checkout@v2
@@ -65,7 +65,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/windows.zip
-          tag_name: ${{ env.time }}
+          tag_name: ${{ env.target_tag }}
           draft: false
           prerelease: true
           
@@ -75,7 +75,7 @@ jobs:
     steps:
       - name: Set current date as env variable
         run: |
-          _ts=$(date -d '${{ github.event.head_commit.updated_at}}' +'%Y%m%d%H%M%S')
+          _ts=$(date -d '${{ github.event.head_commit.timestamp}}' +'%Y%m%d%H%M%S')
           echo "target_tag=${_ts}" >> $GITHUB_ENV
       - uses: chickensoft-games/setup-godot@v1
         name: Setup Godot
@@ -115,6 +115,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: build/linux.zip
-          tag_name: ${{ env.time }}
+          tag_name: ${{ env.target_tag }}
           draft: false
           prerelease: true
