@@ -150,13 +150,13 @@ func set_buttons(game_name):
 
 
 func apply_theme(theme_name):
+	# Set up variables for palletes and tweens
 	pallete = theme_json[theme_name]
 	var base_theme = load("res://themes/base.tres") ## we shouldn't be doing this
 	if not pallete.has("secondary"):
 		pallete["secondary"] = pallete["main"]
 	var tween = get_tree().create_tween().set_parallel(true)
 	if pallete["id"] == "adastral":
-		#$TextureRect2.show()
 		$LatestVersion.hide()
 		$InstalledVersion.hide()
 		$Install.hide()
@@ -164,21 +164,24 @@ func apply_theme(theme_name):
 		$Panel2/Background.hide()
 		$AboutInfo/BigLabel.visible_characters = -1
 		$AboutInfo.show()
-		if get_node_or_null("TextureRect"):
-			$TextureRect.show()
+		# Show or hide the main logo depending on if we are on the home screen. NOTE: The reason we get 'WhiteLogo' is because the node is reparented in init.gd.
+		if get_node_or_null("WhiteLogo"):
+			$WhiteLogo.show()
 		$BottomPanel.hide()
 	else:
-		if get_node_or_null("TextureRect"):
-			$TextureRect.hide()
+		if get_node_or_null("WhiteLogo"):
+			$WhiteLogo.hide()
+		# Show game version and buttons
 		$AboutInfo.hide()
 		$BottomPanel.show() # these all need to be tweens
 		$Install.show()
 		$Verify.show()
 		$LatestVersion.show()
 		$InstalledVersion.show()
-		$TextureRect2.hide()
+		$TextureRect2.hide() # Hide the logo
 		$Panel2/Background.show()
 		#$Panel2.show()
+	# Set text and textures
 	$LatestVersion.text = "[left]Latest Version: [b]%s[/b]" % s.get_latest_version(theme_name)
 	set_buttons(theme_name)
 	var newbgtexture = load_image(pallete["bg"])
