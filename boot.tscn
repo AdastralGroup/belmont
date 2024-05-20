@@ -20,7 +20,7 @@ grow_vertical = 2
 theme = ExtResource("1_1k54t")
 script = ExtResource("2_vhxfp")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="WhiteLogo" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.137255)
 layout_mode = 0
 offset_left = 124.0
@@ -31,7 +31,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="OrangeLogo" type="TextureRect" parent="."]
 modulate = Color(1, 0.447059, 0, 0.137255)
 layout_mode = 0
 offset_left = -521.0
@@ -42,7 +42,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="."]
+[node name="RedLogo" type="TextureRect" parent="."]
 modulate = Color(1, 0.0313726, 0, 0.137255)
 layout_mode = 0
 offset_left = -1466.0
@@ -53,7 +53,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="."]
+[node name="YellowLogo" type="TextureRect" parent="."]
 modulate = Color(1, 0.92549, 0, 0.137255)
 layout_mode = 0
 offset_left = 3232.0
@@ -64,7 +64,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="GreenLogo" type="TextureRect" parent="."]
 modulate = Color(0.196078, 1, 0, 0.137255)
 layout_mode = 0
 offset_left = 771.0
@@ -75,7 +75,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="."]
+[node name="BlueLogo" type="TextureRect" parent="."]
 modulate = Color(0, 0.0627451, 1, 0.137255)
 layout_mode = 0
 offset_left = 1282.0
@@ -86,7 +86,7 @@ pivot_offset = Vector2(250, 250)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="Initialising" type="Label" parent="."]
 layout_mode = 0
 offset_left = 232.0
 offset_top = 143.0
@@ -96,7 +96,7 @@ theme_override_fonts/font = ExtResource("4_6hwq1")
 theme_override_font_sizes/font_size = 40
 text = "Adastral Initialising..."
 
-[node name="Label2" type="Label" parent="."]
+[node name="DebugText" type="Label" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 560.0
@@ -110,20 +110,19 @@ Up to date.
 Sanity Checks: OK.
 Launching."
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="MainLogoParent" type="Node2D" parent="."]
 visible = false
 position = Vector2(119, 100)
 metadata/_edit_group_ = true
 
-[node name="TextureRect4" type="TextureRect" parent="Node2D"]
+[node name="MainLogo" type="TextureRect" parent="MainLogoParent"]
 offset_right = 200.0
 offset_bottom = 200.0
 pivot_offset = Vector2(100, 100)
 texture = ExtResource("3_gsxu1")
 expand_mode = 1
 
-[node name="Label3" type="Label" parent="."]
-visible = false
+[node name="TitleText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 340.0
 offset_top = 142.0
