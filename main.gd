@@ -2,13 +2,13 @@ extends Control
 var pallete
 var theme_json = {"adastral":
 	{"id":"adastral","dark":"#00000000","light": "#f8f3ee",
-		"main": "#005c9d",
+		"main": "#0064ad",
 		"accent": "#b76300",
 		"lightfg": "#8d847b",
 		"click":"#ffdd63",
 		"click_t":"#000000",
 		"bg": "res://assets/bg.png",
-		"star": "res://assets/adastral.svg"}}
+		"star": "res://assets/adastral.png"}}
 var games: Dictionary
 var s : binding
 var current_screen : String # use an enum damnit!!!!
@@ -37,6 +37,7 @@ func _on_HomeButton_pressed():
 	apply_theme("adastral")
 
 func _on_game_verified(status,game):
+	print("[Belmont/GameVerified] %s verified" % [game])
 	call_deferred("t_game_verified",game)
 	
 func _on_game_updated(status,game):
@@ -53,6 +54,7 @@ func _on_install_pressed():
 	tween.tween_property($ProgressBar,"modulate",Color.WHITE,0.2)
 
 func _on_verify_pressed():
+	print("[Belmont/VerifyPressed] Verifying %s" % [current_game])
 	s.verify_game(current_game)
 	$Install.disabled = true
 	$Verify.text = "Verifying..."
@@ -107,7 +109,7 @@ func add_side_icons():
 			new.ignore_texture_size = true
 			new.stretch_mode = TextureButton.STRETCH_SCALE
 			new.custom_minimum_size= Vector2(42,42)
-			new.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+			new.size_flags_horizontal = Control.SIZE_SHRINK_CENTER 
 			new.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 			new.texture_normal = load_image(x["icon"])
 			$HBoxContainer.add_child(new)
@@ -121,20 +123,22 @@ func t_progress_update(game,progress):
 
 func t_game_verified(game):
 	set_buttons(game)
-	var tween = get_tree().create_tween()
-	tween.tween_property($ProgressBar,"modulate",Color.TRANSPARENT,0.2)
 	games[game]["progress"] = 0
-	await get_tree().create_timer(0.2).timeout
-	$ProgressBar.hide()
+	if current_game == game:
+		var tween = get_tree().create_tween()
+		tween.tween_property($ProgressBar,"modulate",Color.TRANSPARENT,0.2)
+		await get_tree().create_timer(0.2).timeout
+		$ProgressBar.hide()
 
 func t_game_updated(game):
 	set_buttons(game)
 	$InstalledVersion.text = "[left]Installed Version: [b]%s[/b]" % s.get_installed_version(game)
-	var tween = get_tree().create_tween()
-	tween.tween_property($ProgressBar,"modulate",Color.TRANSPARENT,0.2)
 	games[game]["progress"] = 0
-	await get_tree().create_timer(0.2).timeout
-	$ProgressBar.hide()
+	if current_game == game:
+		var tween = get_tree().create_tween()
+		tween.tween_property($ProgressBar,"modulate",Color.TRANSPARENT,0.2)
+		await get_tree().create_timer(0.2).timeout
+		$ProgressBar.hide()
 
 
 
