@@ -342,7 +342,6 @@ offset_bottom = 350.0
 texture = ExtResource("20_17qi8")
 expand_mode = 1
 
-[connection signal="change_to" from="Main" to="Main/HBoxContainer" method="_on_Main_change_to"]
 [connection signal="pressed" from="Main/TopPanel/HomeButton" to="Main" method="_on_HomeButton_pressed"]
 [connection signal="pressed" from="Main/TopPanel/AdvancedButton" to="Main" method="_on_Button4_pressed"]
 [connection signal="pressed" from="Main/Install" to="Main" method="_on_install_pressed"]

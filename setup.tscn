@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsp33e8s172n5"]
+[gd_scene load_steps=3 format=3 uid="uid://dsp33e8s172n5"]
+
+[ext_resource type="FontFile" uid="uid://culcak1g0byvy" path="res://fonts/HankenGrotesk-Medium.ttf" id="1_e5qvj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37v2i"]
 bg_color = Color(0, 0.392157, 0.678431, 1)
@@ -13,63 +15,43 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 3080.0
+offset_right = 770.0
 offset_bottom = 350.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_37v2i")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(770, 0)
-anchor_mode = 0
-
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 172.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("1_e5qvj")
 text = "Welcome to Adastral.
 let's get you set up!"
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 721.0
-offset_top = 144.0
-offset_right = 758.0
-offset_bottom = 185.0
-
-[node name="Button" type="Button" parent="Button"]
-layout_mode = 0
-offset_left = 770.0
-offset_right = 807.0
-offset_bottom = 41.0
-
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 773.0
-offset_top = 4.0
-offset_right = 890.0
-offset_bottom = 28.0
-text = "We've detected Steam at:"
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 775.0
-offset_top = 112.0
-offset_right = 1321.0
-offset_bottom = 136.0
-text = "You've already got this installed!"
+offset_left = 6.0
+offset_top = 65.0
+offset_right = 301.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("1_e5qvj")
+text = "Sourcemod path:"
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 0
-offset_left = 774.0
-offset_top = 66.0
-offset_right = 1320.0
-offset_bottom = 90.0
-text = "For some games, you need the Source SDK 2013 (Multiplayer) installed.
-"
+offset_left = 7.0
+offset_top = 91.0
+offset_right = 302.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("1_e5qvj")
+text = "TF2:"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label4" type="Label" parent="."]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 169.0
-offset_right = 1323.0
-offset_bottom = 193.0
-text = "For a few games, you also need TF2 installed. "
+offset_left = 6.0
+offset_top = 116.0
+offset_right = 301.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("1_e5qvj")
+text = "SDK 2013 Multiplayer:"

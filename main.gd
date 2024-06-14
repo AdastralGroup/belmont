@@ -16,8 +16,27 @@ var current_game = ""
 signal change_to(game)
 signal update_game(game)
 signal verify_game(game)
+var oops_s = preload("res://oops.tscn")
+var panic_s = preload("res://panic.tscn")
+
+func panic(err_string):
+	var z = panic_s.instantiate()
+	z.find_child("Label2").set("text",err_string)
+	get_tree().get_root().add_child(z)
+	await get_tree().create_timer(1).timeout
+	get_tree().paused = true
+	
+func oops(err_string):
+	var z = oops_s.instantiate()
+	z.find_child("Label2").set("text",err_string)
+	get_tree().get_root().add_child(z)
+	await get_tree().create_timer(1).timeout
+	get_tree().paused = true
 
 func load_image(path):
+	if path == "":
+		panic("no image path specified?")
+		return
 	if "res://" in path:
 		return load(path)
 	else:
@@ -43,8 +62,11 @@ func _on_game_verified(status,game):
 func _on_game_updated(status,game):
 	call_deferred("t_game_updated",game)
 	
-
+func _on_error(error_detail):
+	print(error_detail)
+	
 func _on_install_pressed():
+	games[current_game]["status"] = "installing"
 	s.update_game(current_game)
 	$Install.disabled = true
 	$Install.text = "Installing..."
@@ -54,6 +76,7 @@ func _on_install_pressed():
 	tween.tween_property($ProgressBar,"modulate",Color.WHITE,0.2)
 
 func _on_verify_pressed():
+	games[current_game]["status"] = "verifying"
 	print("[Belmont/VerifyPressed] Verifying %s" % [current_game])
 	s.verify_game(current_game)
 	$Install.disabled = true
@@ -88,6 +111,7 @@ func ready_after_sutton():
 	s.connect("game_verified",_on_game_verified)
 	s.connect("game_updated",_on_game_updated)
 	s.connect("progress_update",_on_progress_update)
+	s.connect("error",_on_error)
 	var z = s.get_server_games()
 	for x in z:
 		theme_json[x] = s.get_game_assets(x)
@@ -122,7 +146,7 @@ func t_progress_update(game,progress):
 	games[game]["progress"] = progress*100
 
 func t_game_verified(game):
-	set_buttons(game)
+	change_game(game)
 	games[game]["progress"] = 0
 	if current_game == game:
 		var tween = get_tree().create_tween()
@@ -131,7 +155,7 @@ func t_game_verified(game):
 		$ProgressBar.hide()
 
 func t_game_updated(game):
-	set_buttons(game)
+	change_game(game)
 	$InstalledVersion.text = "[left]Installed Version: [b]%s[/b]" % s.get_installed_version(game)
 	games[game]["progress"] = 0
 	if current_game == game:
@@ -154,21 +178,32 @@ func set_stylebox_colour(stylebox,colour):
 
 func set_buttons(game_name):
 	if s.get_installed_version(game_name) == "":
+		if game_name in games.keys():
+			if "status" in games[game_name].keys():
+				if games[game_name]["status"] == "installing":
+					$Install.text = "Installing.."
+			else:
+				$Install.text = "Install"
 		$InstalledVersion.text = "[left]Not Installed!"
 		$Verify.disabled = true
 		$Install.disabled = false
+		
 	else:
 		$InstalledVersion.text = "[left]Installed Version: [b]%s[/b]" % s.get_installed_version(game_name)
 		if s.get_installed_version(game_name) == s.get_latest_version(game_name):
 			$Install.disabled = true
 			$Install.text = "Installed"
 			$Verify.disabled = false
-			$Verify.text = "Verify"
 		elif int(s.get_installed_version(game_name)) < int(s.get_latest_version(game_name)):
-			$Verify.text = "Verify"
 			$Install.disabled = false
 			$Verify.disabled = false
 			$Install.text = "Update"
+		if game_name in games.keys(): # this is insanely cooked
+			if "status" in games[game_name].keys():
+				if games[game_name]["status"] == "installing":
+					$Install.text = "Installing.."
+			else:
+				$Install.text = "Install"
 		
 
 

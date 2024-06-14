@@ -1,5 +1,5 @@
 extends Control
-#var oops = preload("res://oops.tscn")
+var oops = preload("res://oops.tscn")
 
 var spin_tween: Tween
 var s: binding
