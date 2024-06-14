@@ -194,7 +194,9 @@ func set_buttons(game_name):
 			$Install.disabled = true
 			$Install.text = "Installed"
 			$Verify.disabled = false
+			$Verify.text = "Verify"
 		elif int(s.get_installed_version(game_name)) < int(s.get_latest_version(game_name)):
+			$Verify.text = "Verify"
 			$Install.disabled = false
 			$Verify.disabled = false
 			$Install.text = "Update"
